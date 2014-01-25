@@ -1,22 +1,9 @@
 BASENAME=aimran
 
-cv:$(BASENAME)_cv.pdf
-
-
-pub:$(BASENAME)_pub.pdf
-
-
-john:$(BASENAME)_resume_2pg.pdf
+cv:$(BASENAME)_cv.pdf clean
 
 busi:$(BASENAME)_business_resume.pdf
 
-#.tex.pdf: 
-#	$(BASENAME).tex 
-#	latex $(BASENAME).tex
-#	latex $(BASENAME).tex
-#	dvips -t letter -o $(BASENAME).ps $(BASENAME).dvi
-#	ps2pdf $(BASENAME).ps $(BASENAME).pdf
-#
 
 # Add some useful inference rules for LaTeX development.
 .SUFFIXES: .doc .sty .tex .dvi .ps .pdf 
@@ -33,7 +20,7 @@ busi:$(BASENAME)_business_resume.pdf
 	ps2pdf $< $*.pdf
 
 
-REMOVE = *.aux *.bbl *.blg *.log *.ps *.dvi 
+REMOVE = *.aux *.bbl *.blg *.log *.ps *.dvi *.out
 
 clean:
 	rm -f $(REMOVE)
